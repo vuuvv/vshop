@@ -15,7 +15,7 @@ from django.db.models import ImageField
 from django.db.models.fields.files import ImageFieldFile
 
 # lfs imports
-from ext.fields.thumbs import scale_to_max_size
+from ext.utils.images import scale_to_max_size
 
 
 def generate_thumb(img, thumb_size, format):
@@ -152,4 +152,17 @@ class ImageWithThumbsField(ImageField):
                                                    height_field=height_field,
                                                    **kwargs)
         self.sizes = sizes
+try:
+    # South introspection rules for our custom field.
+    from south.modelsinspector import add_introspection_rules
+
+    add_introspection_rules([(
+        (ImageWithThumbsField, ),
+        [],
+        {
+            'sizes': ["sizes", {"default": None}],
+        },
+    )], ['ext\.fields\.thumbs\.ImageWithThumbsField'])
+except ImportError:
+    pass
 

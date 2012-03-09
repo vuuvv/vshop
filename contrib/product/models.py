@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from django.utils.translation import get_language, ugettext, ugettext_lazy as _
 from django.contrib.sites.models import Site
 from django.contrib.contenttypes import generic
@@ -22,6 +23,20 @@ SHIP_CLASS_CHOICES = (
 	('YES', _('Shippable')),
 	('NO', _('Not Shippable'))
 )
+
+class Image(models.Model):
+	content_type = models.ForeignKey(ContentType, verbose_name=_("Content type"), related_name="image", blank=True, null=True)
+	object_id = models.PositiveIntegerField(_("Content id"), blank=True, null=True)
+	content_object = generic.GenericForeignKey(ct_field="content_type", fk_field="content_id")
+
+	picture = ImageWithThumbsField(verbose_name=_('Picture'), upload_to='images', max_length=200)
+	caption = models.CharField(_('Optional caption'), max_length=100, null=True, blank=True)
+	ordering = models.IntegerField(_('Sort Order'), default=0)
+
+	class Meta:
+		ordering = ['ordering']
+		verbose_name = _('Category Image')
+		verbose_name_plural = _('Category Images')
 
 class Category(models.Model):
 	site = models.ForeignKey(Site, verbose_name=_('Site'))
@@ -60,7 +75,7 @@ class Option(models.Model):
 	ordering = models.IntegerField(_("Sort Order"), default=0)
 
 	class Meta:
-		ordering = ('option_group', 'sort_order', 'name')
+		ordering = ('option_group', 'ordering', 'name')
 		unique_together = ('option_group', 'value')
 		verbose_name = _("Option Item")
 		verbose_name_plural = _("Option Items")
@@ -71,7 +86,7 @@ class Product(models.Model):
 	slug = models.SlugField(_('Slug Name'), max_length=255, blank=True)
 	sku = models.CharField(_('SKU'), max_length=255, blank=True, null=True)
 	short_desc = models.TextField(_('Short description of product'), default='', max_length=200, blank=True)
-	images = GenericRelation(Image)
+	images = generic.GenericRelation(Image)
 	description = models.TextField(_('Description of product'), default='', max_length=200, blank=True)
 	category = models.ManyToManyField(Category, blank=True, verbose_name=_('Category'))
 	stock = models.DecimalField(_('Number in stock'), max_digits=18, decimal_places=6, default='0')
@@ -87,38 +102,23 @@ class Product(models.Model):
 	width_unit = models.CharField(_('Width units'), max_length=6, null=True, blank=True)
 	height = models.DecimalField(_('Height'), max_digits=6, decimal_places=2, null=True, blank=True)
 	height_unit = models.CharField(_('Height units'), max_length=6, null=True, blank=True)
-	related_items = models.ManyToManyField(_('self'), blank=True, null=True, verbose_name=_('Related Items'), related_name='related_products')
+	related_items = models.ManyToManyField('self', blank=True, null=True, verbose_name=_('Related Items'), related_name='related_products')
 	total_sold = models.DecimalField(_("Totle sold"), max_digits=18, decimal_places=6, default='0')
 	shipclass = models.CharField(_('Shipping'), choices=SHIP_CLASS_CHOICES, default="DEFAULT", max_length=10)
 
-class Image(models.Model):
-	content_type = models.ForeignKey(ContentType, verbose_name=_("Content type"), related_name="image", blank=True, null=True)
-	object_id = modles.PositiveIntegerField(_("Content id"), blank=True, null=True)
-	content_object = generic.GenericForeignKey(ct_field="content_type", fk_field="content_id")
-
-	picture = models.ImageWithThumbsField(verbose_name=_('Picture'), upload_to='', max_length=200)
-	caption = models.CharField(_('Optional caption'), max_length=100, null=True, blank=True)
-	ordering = models.IntegerField(_('Sort Order'), default=0)
-
-	class Meta:
-		ordering = ['ordering']
-		unique_together = ('category', 'sort')
-		verbose_name = _('Category Image')
-		verbose_name_plural = _('Category Images')
-
-class AttributeOption(modles.Model):
+class AttributeOption(models.Model):
 	description =  models.CharField(_("Description"), max_length=100)
-	name = modles.SlugField(_("Attribute name"), max_length=100)
+	name = models.SlugField(_("Attribute name"), max_length=100)
 	validation = models.CharField(_("Field Validation"), max_length=100)
 	ordering = models.IntegerField(_("Sort Order"), default=0)
 	error_message = models.CharField(_("Error Message"), default=_("Invalid Entry"), max_length=100)
 
 	class Meta:
-		ordergin = ('ordering',)
+		ordering = ('ordering',)
 
 class ProductAttribute(models.Model):
-	product = Models.ForeignKey(Product)
-	languagecode = models.CharField(_('language'), max_length=10, choices=LANGUAGES, null=True, blank=True)
+	product = models.ForeignKey(Product)
+	languagecode = models.CharField(_('language'), max_length=10, choices=settings.LANGUAGES, null=True, blank=True)
 	option = models.ForeignKey(AttributeOption)
 	value = models.CharField(_("Value"), max_length=255)
 
@@ -127,8 +127,8 @@ class ProductAttribute(models.Model):
 		verbose_name_plural = _("Product Attributes")
 
 class CategoryAttribute(models.Model):
-	category = Models.ForeignKey(Category)
-	languagecode = models.CharField(_('language'), max_length=10, choices=LANGUAGES, null=True, blank=True)
+	category = models.ForeignKey(Category)
+	languagecode = models.CharField(_('language'), max_length=10, choices=settings.LANGUAGES, null=True, blank=True)
 	option = models.ForeignKey(AttributeOption)
 	value = models.CharField(_("Value"), max_length=255)
 
@@ -138,7 +138,7 @@ class CategoryAttribute(models.Model):
 
 class Price(models.Model):
 	product = models.ForeignKey(Product)
-	price = DecimalField(_("Price"), max_digits=14, decimal_places=6)
+	price = models.DecimalField(_("Price"), max_digits=14, decimal_places=6)
 	quantity = models.DecimalField(_("Discount Quantity"), max_digits=18, decimal_places=6, default='1.0')
 
 	class Meat:

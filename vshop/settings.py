@@ -124,8 +124,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'south',
     #'contrib.store',
-    #'contrib.product',
-    'contrib.jquery_vuuvv',
+    'contrib.product',
+    #'contrib.jquery_vuuvv',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -156,3 +156,15 @@ LOGGING = {
         },
     }
 }
+
+# Language code for this installation. All choices can be found here:
+# http://www.i18nguy.com/unicode/language-identifiers.html
+LANGUAGE_CODE = 'en-us'
+
+# Languages for your site.  The language name
+# should be the utf-8 encoded local name for the language.
+gettext_noop = lambda s:s
+
+LANGUAGES = (
+    ('en', gettext_noop('English')),
+)
