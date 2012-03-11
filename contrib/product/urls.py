@@ -4,12 +4,10 @@ from django.conf.urls import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('contrib.product.views',
     # Examples:
     # url(r'^$', 'vshop.views.home', name='home'),
-    url(r'^/', include('contrib.store')),
-    url(r'^product/', include('contrib.product.urls')),
-    url(r'^v/', include('contrib.jquery_vuuvv')),
+    url(r'^$', 'index'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
