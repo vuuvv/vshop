@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'south',
     #'contrib.store',
     'contrib.product',
+    'contrib.manage',
     #'contrib.jquery_vuuvv',
 )
 

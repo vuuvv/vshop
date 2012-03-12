@@ -9,7 +9,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'vshop.views.home', name='home'),
     url(r'^/', include('contrib.store')),
     url(r'^product/', include('contrib.product.urls')),
-    url(r'^v/', include('contrib.jquery_vuuvv')),
+    url(r'^manage/', include('contrib.manage.urls')),
+    #url(r'^v/', include('contrib.jquery_vuuvv')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
