@@ -1,0 +1,115 @@
+.r {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+.abs {
+	position: absolute;
+}
+
+.rel {
+	position: relative;
+}
+
+a, input, select {
+	outline: 0 none;
+}
+
+body {
+	font-family: sans-serif;
+	font-size: 12px;
+	line-height: 1.4em;
+	min-width: 600px;
+}
+
+#adminmenu {
+	width: 145px;
+}
+
+.menu.opened {
+	border-color: #dfdfdf;
+	border-style: solid;
+	border-width: 1px 0 1px;
+}
+
+#adminmenu .menu.opened .menu-item {
+	color: #fff;
+	text-shadow: 0 -1px 0 #333;
+	display: block;
+	border-style: solid;
+	border-width: 1px 0;
+	font-weight: bold;
+	line-height: 18px;
+	min-width: 112px;
+	padding: 5px 5px 5px 28px;
+	background-color: #777;
+	background-image: -ms-linear-gradient(bottom,#6d6d6d,#808080);
+	background-image: -moz-linear-gradient(bottom,#6d6d6d,#808080);
+	background-image: -o-linear-gradient(bottom,#6d6d6d,#808080);
+	background-image: -webkit-gradient(linear,left bottom,left top,from(#6d6d6d),to(#808080));
+	background-image: -webkit-linear-gradient(bottom,#6d6d6d,#808080);
+	background-image: linear-gradient(bottom,#6d6d6d,#808080);
+}
+
+#adminmenu .menu-image {
+	background: url("images/menu.gif") scroll -60px -1px transparent;
+	height: 28px;
+	width: 28px;
+}
+
+#adminmenu .menu-arrow {
+	display: block;
+	cursor: auto;
+	z-index: 25;
+	right: 100%;
+	margin: 0;
+	height: 30px;
+	width: 6px;
+
+	-moz-transform:    translate( 146px );
+	-webkit-transform: translate( 146px );
+	-o-transform:      translate( 146px );
+	-ms-transform:     translate( 146px );
+	transform:         translate( 146px );
+}
+
+#adminmenu .menu-arrow div {
+	background-color: #777; /* Fallback */
+	background-image: -ms-linear-gradient(right bottom, #6d6d6d, #808080); /* IE10 */
+	background-image: -moz-linear-gradient(right bottom, #6d6d6d, #808080); /* Firefox */
+	background-image: -o-linear-gradient(right bottom, #6d6d6d, #808080); /* Opera */
+	background-image: -webkit-gradient(linear, right bottom, left top, from(#6d6d6d), to(#808080)); /* old Webkit */
+	background-image: -webkit-linear-gradient(right bottom, #6d6d6d, #808080); /* new Webkit */
+	background-image: linear-gradient(right bottom, #6d6d6d, #808080); /* proposed W3C Markup */
+	position: absolute;
+	top: 7px;
+	left: -1px;
+	width: 14px;
+	height: 15px;
+
+	-moz-transform:    matrix( -0.6, 1, 0.6, 1, 0, 0 );
+	-webkit-transform: matrix( -0.6, 1, 0.6, 1, 0, 0 );
+	-o-transform:      matrix( -0.6, 1, 0.6, 1, 0, 0 );
+	-ms-transform:     matrix( -0.6, 1, 0.6, 1, 0, 0 );
+	transform:         matrix( -0.6, 1, 0.6, 1, 0, 0 );
+}
+
+#adminmenu .submenu-bar {
+	background: #fff;
+	border-color: #dfdfdf;
+	padding: 4px 0;
+}
+
+#adminmenu .submenu {
+}
+
+#adminmenu .submenu-item {
+	display: block;
+	font-weight: bold;
+	color: #333;
+	font-size: 12px;
+	line-height: 18px;
+	padding: 2px 5px 2px 12px;
+}

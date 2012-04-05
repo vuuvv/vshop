@@ -4,7 +4,11 @@ from django.conf.urls import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('contrib.manage.views.category',
+urlpatterns = patterns('contrib.manage.views.home',
+	url(r'^$', 'index'),
+)
+
+urlpatterns += patterns('contrib.manage.views.category',
 	url(r'^category$', 'index'),
 	url(r'$category/add/(?P<category_id>\d*)$', 'add'),
 	url(r'$category/(?p<category_id>\d*)$', 'view'),

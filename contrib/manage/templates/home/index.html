@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block css %}
+	<link media="all" rel="stylesheet" href="{% static "css/admin.css" %}" type="text/css" />
+{% endblock %}
+
+{% block title %}
+Dashboard
+{% endblock %} 
+
+{% block content %}
+<div id="adminmenu">
+	<ul class="r menu-bar">
+		<li class="rel r menu opened">
+			<div class="abs menu-image"></div>
+			<div class="abs menu-arrow"><div></div></div>
+			<a class="r menu-item" href="javascript:void(0)">Dashboard</a>
+			<ul class="r submenu-bar">
+				<li class="r submenu"><a class="r submenu-item" href="javascript:void(0)">Home</a></li>
+				<li class="r submenu"><a class="r submenu-item" href="javascript:void(0)">Update</a></li>
+			</ul>
+		</li>
+		<li>Posts</li>
+		<li>Media</li>
+		<li>Links</li>
+		<li>Pages</li>
+		<li>Comments</li>
+	</ul>
+</div>
+{% endblock %}
