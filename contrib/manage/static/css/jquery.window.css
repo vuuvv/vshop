@@ -1,0 +1,61 @@
+.vista {
+	font-size: 1px;
+	position: absolute;
+}
+
+.vista .left-top {
+	position: absolute;
+	background-color: #f00;
+	width: 15px;
+	height: 35px;
+}
+
+.vista .top {
+	position: absolute;
+	background-color: #0f0;
+	height: 36px;
+}
+
+.vista .right-top {
+	position: absolute;
+	background-color: #00f;
+	width: 15px;
+	height: 35px;
+}
+
+.vista .left {
+	position: absolute;
+	background-color: #ff0;
+	width: 16px;
+}
+
+.vista .content {
+	position: absolute;
+	background-color: #0ff;
+}
+
+.vista .right {
+	position: absolute;
+	background-color: #f0f;
+	width: 16px;
+}
+
+.vista .left-bottom {
+	position: absolute;
+	background-color: #800;
+	width: 16px;
+	height: 15px;
+}
+
+.vista .bottom {
+	position: absolute;
+	background-color: #080;
+	height: 16px;
+}
+
+.vista .right-bottom {
+	position: absolute;
+	background-color: #008;
+	width: 16px;
+	height: 15px;
+}
