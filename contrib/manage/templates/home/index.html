@@ -4,13 +4,14 @@
 
 {% block css %}
 	<link media="all" rel="stylesheet" href="{% static "css/admin.css" %}" type="text/css" />
-	<link media="all" rel="stylesheet" href="{% static "css/jquery.window.css" %}" type="text/css" />
+	<link media="all" rel="stylesheet" href="{% static "css/themes/vista/window.css" %}" type="text/css" />
 {% endblock %}
 
 {% block js %}
 	<script src="{% static "js/ui/jquery.ui.core.js" %}" type="text/javascript"></script>
 	<script src="{% static "js/ui/jquery.ui.widget.js" %}" type="text/javascript"></script>
 	<script src="{% static "js/ui/jquery.ui.mouse.js" %}" type="text/javascript"></script>
+	<script src="{% static "js/ui/jquery.ui.draggable.js" %}" type="text/javascript"></script>
 	<script src="{% static "js/jquery.window.js" %}" type="text/javascript"></script>
 	<script src="{% static "js/jquery.test.js" %}" type="text/javascript"></script>
 {% endblock %}
@@ -22,6 +23,6 @@ Dashboard
 {% block content %}
 <div id="test" style="width:100px;height:100px;background:#f00"></div>
 <script type="text/javascript">
-	$("#test").test();
+	$("<h1>TEST</h1>").appendTo("body").window();
 </script>
 {% endblock %}
