@@ -7,7 +7,7 @@
 	position: absolute;
 	width: 15px;
 	height: 35px;
-	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='dzz/styles/window/vista/images/LEFT_TOP.png', sizingMethod='scale');
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/LEFT_TOP.png', sizingMethod='scale');
 	background-image:url(images/LEFT_TOP.png) !important;
 	background-image:none;
 	background-repeat: no-repeat;

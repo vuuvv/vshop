@@ -4,8 +4,8 @@
 
 .vista .left-top {
 	position: absolute;
-	width: 15px;
-	height: 35px;
+	width: 6px;
+	height: 25px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/LEFT_TOP.png', sizingMethod='scale');
 	background-image:url(images/LEFT_TOP.png) !important;
 	background-image:none;
@@ -14,7 +14,7 @@
 
 .vista .top {
 	position: absolute;
-	height: 36px;
+	height: 25px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/TOP.png', sizingMethod='scale');
 	background-image:url(images/TOP.png) !important;
 	background-image:none;
@@ -23,8 +23,8 @@
 
 .vista .right-top {
 	position: absolute;
-	width: 15px;
-	height: 35px;
+	width: 6px;
+	height: 25px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/RIGHT_TOP.png', sizingMethod='scale');
 	background-image:url(images/RIGHT_TOP.png) !important;
 	background-image:none;
@@ -33,7 +33,7 @@
 
 .vista .left {
 	position: absolute;
-	width: 16px;
+	width: 3px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/LEFT.png', sizingMethod='scale');
 	background-image:url(images/LEFT.png) !important;
 	background-image:none;
@@ -47,7 +47,7 @@
 
 .vista .right {
 	position: absolute;
-	width: 16px;
+	width: 3px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/RIGHT.png', sizingMethod='scale');
 	background-image:url(images/RIGHT.png) !important;
 	background-image:none;
@@ -56,8 +56,8 @@
 
 .vista .left-bottom {
 	position: absolute;
-	width: 16px;
-	height: 15px;
+	width: 3px;
+	height: 3px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/LEFT_BOTTOM.png', sizingMethod='scale');
 	background-image:url(images/LEFT_BOTTOM.png) !important;
 	background-image:none;
@@ -66,7 +66,7 @@
 
 .vista .bottom {
 	position: absolute;
-	height: 16px;
+	height: 3px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/BOTTOM.png', sizingMethod='scale');
 	background-image:url(images/BOTTOM.png) !important;
 	background-image:none;
@@ -75,49 +75,10 @@
 
 .vista .right-bottom {
 	position: absolute;
-	width: 16px;
-	height: 15px;
+	width: 3px;
+	height: 3px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/RIGHT_BOTTOM.png', sizingMethod='scale');
 	background-image:url(images/RIGHT_BOTTOM.png) !important;
 	background-image:none;
 	background-repeat: no-repeat;
-}
-
-.vista .close {
-	position: absolute;
-	width: 43px;
-	height: 16px;
-	right: 16px;
-	top: 8px;
-	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/CLOSE.png', sizingMethod='scale');
-	background-image:url(images/CLOSE.png) !important;
-	background-image:none;
-}
-
-.vista .ui-state-hover .close{
-	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/CLOSE_hover.png', sizingMethod='scale');
-	background-image:url(images/CLOSE_hover.png) !important;
-	background-image:none;
-}
-
-.vista .min {
-	position: absolute;
-	width: 25px;
-	height: 16px;
-	right: 84px;
-	top: 8px;
-	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/min.png', sizingMethod='scale');
-	background-image:url(images/min.png) !important;
-	background-image:none;
-}
-
-.vista .max {
-	position: absolute;
-	width: 25px;
-	height: 16px;
-	right: 59px;
-	top: 8px;
-	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/max.png', sizingMethod='scale');
-	background-image:url(images/max.png) !important;
-	background-image:none;
 }

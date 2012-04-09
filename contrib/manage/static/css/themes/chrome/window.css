@@ -1,0 +1,135 @@
+.chrome {
+	position: absolute;
+}
+
+.chrome .left-top {
+	position: absolute;
+	width: 15px;
+	height: 35px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/LEFT_TOP.png', sizingMethod='scale');
+	background-image:url(images/LEFT_TOP.png) !important;
+	background-image:none;
+	background-repeat: no-repeat;
+}
+
+.chrome .top {
+	position: absolute;
+	height: 36px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/TOP.png', sizingMethod='scale');
+	background-image:url(images/TOP.png) !important;
+	background-image:none;
+	background-repeat: repeat-x;
+}
+
+.chrome .right-top {
+	position: absolute;
+	width: 15px;
+	height: 35px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/RIGHT_TOP.png', sizingMethod='scale');
+	background-image:url(images/RIGHT_TOP.png) !important;
+	background-image:none;
+	background-repeat: no-repeat;
+}
+
+.chrome .left {
+	position: absolute;
+	width: 16px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/LEFT.png', sizingMethod='scale');
+	background-image:url(images/LEFT.png) !important;
+	background-image:none;
+	background-repeat: repeat-y;
+}
+
+.chrome .content {
+	position: absolute;
+	background-color: #0ff;
+}
+
+.chrome .right {
+	position: absolute;
+	width: 16px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/RIGHT.png', sizingMethod='scale');
+	background-image:url(images/RIGHT.png) !important;
+	background-image:none;
+	background-repeat: repeat-y;
+}
+
+.chrome .left-bottom {
+	position: absolute;
+	width: 16px;
+	height: 15px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/LEFT_BOTTOM.png', sizingMethod='scale');
+	background-image:url(images/LEFT_BOTTOM.png) !important;
+	background-image:none;
+	background-repeat: no-repeat;
+}
+
+.chrome .bottom {
+	position: absolute;
+	height: 16px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/BOTTOM.png', sizingMethod='scale');
+	background-image:url(images/BOTTOM.png) !important;
+	background-image:none;
+	background-repeat: repeat-x;
+}
+
+.chrome .right-bottom {
+	position: absolute;
+	width: 16px;
+	height: 15px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/RIGHT_BOTTOM.png', sizingMethod='scale');
+	background-image:url(images/RIGHT_BOTTOM.png) !important;
+	background-image:none;
+	background-repeat: no-repeat;
+}
+
+.chrome .close {
+	position: absolute;
+	width: 43px;
+	height: 18px;
+	right: 16px;
+	top: 8px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/CLOSE.png', sizingMethod='scale');
+	background-image:url(images/CLOSE.png) !important;
+	background-image:none;
+}
+
+.chrome .ui-state-hover .close {
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/CLOSE_hover.png', sizingMethod='scale');
+	background-image:url(images/CLOSE_hover.png) !important;
+	background-image:none;
+}
+
+.chrome .min {
+	position: absolute;
+	width: 26px;
+	height: 18px;
+	right: 84px;
+	top: 8px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/min.png', sizingMethod='scale');
+	background-image:url(images/min.png) !important;
+	background-image:none;
+}
+
+.chrome .ui-state-hover .min{
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/min_hover.png', sizingMethod='scale');
+	background-image:url(images/min_hover.png) !important;
+	background-image:none;
+}
+
+.chrome .max {
+	position: absolute;
+	width: 25px;
+	height: 18px;
+	right: 59px;
+	top: 8px;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/max.png', sizingMethod='scale');
+	background-image:url(images/max.png) !important;
+	background-image:none;
+}
+
+.chrome .ui-state-hover .max{
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/chrome/images/max_hover.png', sizingMethod='scale');
+	background-image:url(images/max_hover.png) !important;
+	background-image:none;
+}

@@ -8,83 +8,18 @@ var css_choose = function($dom, style) {
 	}
 }
 
-var Window = function(options) {
-	this.$container = $(options.container);
-	options = $.extend({}, Window.options, options||{});
-	this.initialize(options)
-};
-
-Window.options = {
-	width: 200,
-	height: 150,
-	class_name: "vista",
-	left_width: 16,
-	right_width: 16,
-	top_height: 36,
-	bottom_height: 15
-};
-
-Window.prototype = {
-	initialize: function(options) {
-		var w = options.width,
-			h = options.height,
-			lw = options.left_width,
-			rw = options.right_width,
-			th = options.top_height,
-			bh = options.bottom_height;
-
-		this.options = options;
-
-
-		var $element = this.$element = $("<div>");
-		$element.addClass(options.class_name);
-		$element.css({"width": w + lw + rw, "height": h + th + bh});
-		css_choose(this.$container, "position", "relative", "absolute");
-		this.center();
-
-		this.create_div("left-top", {left: 0, top: 0});
-		this.create_div("top", {left: lw, top: 0, width: w});
-		this.create_div("right-top", {left: lw + w, top: 0});
-		this.create_div("left", {left: 0, top: th, height: h});
-		this.create_div("content", {left: lw, top: th});
-		this.create_div("right", {left: lw + w, top: th, height: h});
-		this.create_div("left-bottom", {left: 0, bottom: 0});
-		this.create_div("bottom", {left: lw, bottom: 0, width: w});
-		this.create_div("right-bottom", {right: 0, bottom: 0});
-
-		this.$container.append(this.$element);
-	},
-
-	create_div: function(class_name, attr) {
-		var $dom = $("<div>");
-		$dom.addClass(class_name);
-		$dom.css(attr);
-		this.$element.append($dom);
-	},
-
-	center: function() {
-		this.$element.css({
-			left: (parseInt(this.$container.css("width")) - parseInt(this.$element.css("width"))) / 2,
-			top: (parseInt(this.$container.css("height")) - parseInt(this.$element.css("width"))) / 2
-		});
-	}
-};
-
-//$.fn.window = function() {
-//	new Window({container: this});
-//}
-
 })(jQuery);
+
 (function($){
 
 $.widget("vuuvv.window", {
 	options: {
 		width: 400,
 		height: 300,
-		theme: "vista",
+		theme: "chrome",
 		left_width: 15,
 		right_width: 15,
-		top_height: 36,
+		top_height: 35,
 		bottom_height: 15,
 		container: "body"
 	},
@@ -96,7 +31,7 @@ $.widget("vuuvv.window", {
 			lw = options.left_width,
 			rw = options.right_width,
 			th = options.top_height,
-			bh = options.bottom_height;
+			bh = options.bottom_height,
 			self = this,
 			win = (self.win = $("<div>"))
 				.addClass("vuuvv-window " + options.theme)
@@ -105,21 +40,28 @@ $.widget("vuuvv.window", {
 
 		this._create_div("left-top", {left: 0, top: 0});
 		this._create_div("top", {left: lw, top: 0, width: w});
-		this._create_div("right-top", {left: lw + w, top: 0});
+		this._create_div("right-top", {right: 0, top: 0});
 		this._create_div("left", {left: 0, top: th, height: h});
-		this._create_div("content", {left: lw, top: th}).append(this.element);
-		this._create_div("right", {left: lw + w, top: th, height: h});
+		this._create_div("content", {left: lw + 1, top: th + 1}).append(this.element);
+		this._create_div("right", {right: 0, top: th, height: h});
 		this._create_div("left-bottom", {left: 0, bottom: 0});
 		this._create_div("bottom", {left: lw, bottom: 0, width: w});
 		this._create_div("right-bottom", {right: 0, bottom: 0});
+		this._hoverable($('<div><div class="close"></div></div>').appendTo(self.win));
+		this._hoverable($('<div><div class="min"></div></div>').appendTo(self.win));
+		this._hoverable($('<div><div class="max"></div></div>').appendTo(self.win));
 
+		self.win.position({
+			of: $(options.container)
+		});
 		self._make_draggable();
 	},
 
-	_create_div: function(class_name, attr) {
+	_create_div: function(class_name, css) {
 		var $dom = $("<div>");
 		$dom.addClass(class_name);
-		$dom.css(attr);
+		if (css) 
+			$dom.css(css);
 		this.win.append($dom);
 		return $dom;
 	},
