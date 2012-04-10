@@ -4,7 +4,7 @@
 
 {% block css %}
 	<link media="all" rel="stylesheet" href="{% static "css/admin.css" %}" type="text/css" />
-	<link media="all" rel="stylesheet" href="{% static "css/themes/chrome/window.css" %}" type="text/css" />
+	<link media="all" rel="stylesheet" href="{% static "css/themes/vista/window.css" %}" type="text/css" />
 {% endblock %}
 
 {% block js %}
@@ -12,6 +12,7 @@
 	<script src="{% static "js/ui/jquery.ui.widget.js" %}" type="text/javascript"></script>
 	<script src="{% static "js/ui/jquery.ui.mouse.js" %}" type="text/javascript"></script>
 	<script src="{% static "js/ui/jquery.ui.draggable.js" %}" type="text/javascript"></script>
+	<script src="{% static "js/ui/jquery.ui.resizable.js" %}" type="text/javascript"></script>
 	<script src="{% static "js/ui/jquery.ui.position.js" %}" type="text/javascript"></script>
 	<script src="{% static "js/jquery.window.js" %}" type="text/javascript"></script>
 {% endblock %}
@@ -22,11 +23,11 @@ Dashboard
 
 {% block content %}
 <script type="text/javascript">
-	$("<h1>TEST</h1>").appendTo("body").window();
+	$("<h1>TEST</h1>").window({theme: "vista"});
 </script>
 <style type="text/css">
 	body {
-		background: #f00;
+		background: #252525;
 	}
 </style>
 {% endblock %}

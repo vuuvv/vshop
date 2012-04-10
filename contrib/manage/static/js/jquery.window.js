@@ -14,14 +14,17 @@ var css_choose = function($dom, style) {
 
 $.widget("vuuvv.window", {
 	options: {
+		title: "",
+		container: "body",
+		resizable: true,
+		draggable: true,
 		width: 400,
 		height: 300,
-		theme: "chrome",
 		left_width: 15,
 		right_width: 15,
 		top_height: 35,
 		bottom_height: 15,
-		container: "body"
+		theme: "vista"
 	},
 
 	_create: function() {
@@ -38,23 +41,33 @@ $.widget("vuuvv.window", {
 				.css({"width": w + lw + rw, "height": h + th + bh})
 				.appendTo(options.container);
 
-		this._create_div("left-top", {left: 0, top: 0});
-		this._create_div("top", {left: lw, top: 0, width: w});
-		this._create_div("right-top", {right: 0, top: 0});
-		this._create_div("left", {left: 0, top: th, height: h});
-		this._create_div("content", {left: lw + 1, top: th + 1}).append(this.element);
-		this._create_div("right", {right: 0, top: th, height: h});
-		this._create_div("left-bottom", {left: 0, bottom: 0});
-		this._create_div("bottom", {left: lw, bottom: 0, width: w});
-		this._create_div("right-bottom", {right: 0, bottom: 0});
-		this._hoverable($('<div><div class="close"></div></div>').appendTo(self.win));
-		this._hoverable($('<div><div class="min"></div></div>').appendTo(self.win));
-		this._hoverable($('<div><div class="max"></div></div>').appendTo(self.win));
+		self._left_top = this._create_div("left-top", {left: 0, top: 0});
+		self._top = this._create_div("top", {left: lw, top: 0, width: w});
+		self._right_top = this._create_div("right-top", {right: 0, top: 0});
+		self._left = this._create_div("left", {left: 0, top: th, height: h});
+		self._content = this._create_div("content", {left: lw + 1, top: th + 1}).append(this.element);
+		self._right = this._create_div("right", {right: 0, top: th, height: h});
+		self._left_bottom = this._create_div("left-bottom", {left: 0, bottom: 0});
+		self._bottom = this._create_div("bottom", {left: lw, bottom: 0, width: w});
+		self._right_bottom = this._create_div("right-bottom", {right: 0, bottom: 0});
+
+		var close = $('<div><div class="close"></div></div>').appendTo(self.win);
+		self._hoverable(close);
+		var min = $('<div><div class="min"></div></div>').appendTo(self.win);
+		self._hoverable(min);
+		var max = $('<div><div class="max"></div></div>').appendTo(self.win);
+		self._hoverable(max);
 
 		self.win.position({
 			of: $(options.container)
 		});
-		self._make_draggable();
+
+		if ( options.draggable && $.fn.draggable ) {
+			self._make_draggable();
+		}
+		if ( options.resizable && $.fn.resizable ) {
+			self._make_resizable();
+		}
 	},
 
 	_create_div: function(class_name, css) {
@@ -64,6 +77,21 @@ $.widget("vuuvv.window", {
 			$dom.css(css);
 		this.win.append($dom);
 		return $dom;
+	},
+
+	_make_resizable: function() {
+		var self = this;
+		this.win.resizable({
+			handles: {
+				s: self._bottom.addClass("ui-resizable-handle ui-resizable-s"),
+				e: self._right.addClass("ui-resizable-handle ui-resizable-e"),
+				se: self._right_bottom.addClass("ui-resizable-handle ui-resizable-se")
+			},
+
+			resize: function(event, ui) {
+				console.log(event);
+			}
+		});
 	},
 
 	_make_draggable: function() {

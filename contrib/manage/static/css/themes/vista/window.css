@@ -86,7 +86,7 @@
 .vista .close {
 	position: absolute;
 	width: 43px;
-	height: 16px;
+	height: 18px;
 	right: 16px;
 	top: 8px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/CLOSE.png', sizingMethod='scale');
@@ -94,7 +94,7 @@
 	background-image:none;
 }
 
-.vista .ui-state-hover .close{
+.vista .ui-state-hover .close {
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/CLOSE_hover.png', sizingMethod='scale');
 	background-image:url(images/CLOSE_hover.png) !important;
 	background-image:none;
@@ -102,22 +102,45 @@
 
 .vista .min {
 	position: absolute;
-	width: 25px;
-	height: 16px;
-	right: 84px;
+	width: 26px;
+	height: 18px;
+	right: 83px;
 	top: 8px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/min.png', sizingMethod='scale');
 	background-image:url(images/min.png) !important;
 	background-image:none;
 }
 
+.vista .ui-state-hover .min {
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/min_hover.png', sizingMethod='scale');
+	background-image:url(images/min_hover.png) !important;
+	background-image:none;
+}
+
 .vista .max {
 	position: absolute;
-	width: 25px;
-	height: 16px;
+	width: 24px;
+	height: 18px;
 	right: 59px;
 	top: 8px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/max.png', sizingMethod='scale');
 	background-image:url(images/max.png) !important;
 	background-image:none;
 }
+
+.vista .ui-state-hover .max {
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/max_hover.png', sizingMethod='scale');
+	background-image:url(images/max_hover.png) !important;
+	background-image:none;
+}
+
+.ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block; }
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-n { cursor: n-resize; }
+.ui-resizable-s { cursor: s-resize; }
+.ui-resizable-e { cursor: e-resize; }
+.ui-resizable-w { cursor: w-resize; }
+.ui-resizable-se { cursor: se-resize; }
+.ui-resizable-sw { cursor: sw-resize; }
+.ui-resizable-nw { cursor: nw-resize; }
+.ui-resizable-ne { cursor: ne-resize; }

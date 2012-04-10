@@ -141,7 +141,7 @@ $.widget.extend = function( target ) {
 		for ( key in input[ inputIndex ] ) {
 			value = input[ inputIndex ][ key ];
 			if (input[ inputIndex ].hasOwnProperty( key ) && value !== undefined ) {
-				target[ key ] = $.isPlainObject( value ) ? $.widget.extend( {}, target[ key ], value ) : value;
+				target[ key ] = ( $.isPlainObject( value ) && $.isPlainObject( target[ key ] ) ) ? $.widget.extend( {}, target[ key ], value ) : value;
 			}
 		}
 	}
