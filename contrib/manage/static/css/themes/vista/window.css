@@ -56,7 +56,7 @@
 
 .vista .left-bottom {
 	position: absolute;
-	width: 16px;
+	width: 15px;
 	height: 15px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/LEFT_BOTTOM.png', sizingMethod='scale');
 	background-image:url(images/LEFT_BOTTOM.png) !important;

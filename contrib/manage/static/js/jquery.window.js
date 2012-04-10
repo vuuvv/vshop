@@ -12,6 +12,13 @@ var css_choose = function($dom, style) {
 
 (function($){
 
+var change_size = function($dom, origin_size, dx, dy) {
+	$dom.css({
+		width: origin_size.width + dx,
+		height: origin_size.height + dy
+	});
+}
+
 $.widget("vuuvv.window", {
 	options: {
 		title: "",
@@ -21,7 +28,7 @@ $.widget("vuuvv.window", {
 		width: 400,
 		height: 300,
 		left_width: 15,
-		right_width: 15,
+		right_width: 16,
 		top_height: 35,
 		bottom_height: 15,
 		theme: "vista"
@@ -42,7 +49,7 @@ $.widget("vuuvv.window", {
 				.appendTo(options.container);
 
 		self._left_top = this._create_div("left-top", {left: 0, top: 0});
-		self._top = this._create_div("top", {left: lw, top: 0, width: w});
+		self._top = this._create_div("top", {left: lw, top: 0, width: w + 1});
 		self._right_top = this._create_div("right-top", {right: 0, top: 0});
 		self._left = this._create_div("left", {left: 0, top: th, height: h});
 		self._content = this._create_div("content", {left: lw + 1, top: th + 1}).append(this.element);
@@ -89,7 +96,12 @@ $.widget("vuuvv.window", {
 			},
 
 			resize: function(event, ui) {
-				console.log(event);
+				self._left.css("height", self.win.height() - self._left_top.height() - self._left_bottom.height());
+				self._right.css("height", self.win.height() - self._right_top.height() - self._right_bottom.height());
+				console.log(self.win.width(), self._left_top.width(), self._right_top.width());
+				console.log(self.win.width() - self._left_top.width() - self._right_top.width());
+				self._top.css("width", self.win.width() - self._left_top.width() - self._right_top.width());
+				self._bottom.css("width", self.win.width() - self._left_bottom.width() - self._right_bottom.width());
 			}
 		});
 	},
