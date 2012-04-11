@@ -1,9 +1,25 @@
-.vista {
+.vista, 
+.vista .left-top, 
+.vista .top, 
+.vista .right-top, 
+.vista .left, 
+.vista .content, 
+.vista .right, 
+.vista .left-bottom, 
+.vista .bottom, 
+.vista .right-bottom,
+.vista .max,
+.vista .min,
+.vista .close,
+.vista .title,
+.vista .resize-x,
+.vista .resize-y,
+.vista .resize {
 	position: absolute;
+	overflow: hidden;
 }
 
 .vista .left-top {
-	position: absolute;
 	width: 15px;
 	height: 35px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/LEFT_TOP.png', sizingMethod='scale');
@@ -13,7 +29,6 @@
 }
 
 .vista .top {
-	position: absolute;
 	height: 36px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/TOP.png', sizingMethod='scale');
 	background-image:url(images/TOP.png) !important;
@@ -22,7 +37,6 @@
 }
 
 .vista .right-top {
-	position: absolute;
 	width: 15px;
 	height: 35px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/RIGHT_TOP.png', sizingMethod='scale');
@@ -32,7 +46,6 @@
 }
 
 .vista .left {
-	position: absolute;
 	width: 16px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/LEFT.png', sizingMethod='scale');
 	background-image:url(images/LEFT.png) !important;
@@ -41,12 +54,10 @@
 }
 
 .vista .content {
-	position: absolute;
 	background-color: #0ff;
 }
 
 .vista .right {
-	position: absolute;
 	width: 16px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/RIGHT.png', sizingMethod='scale');
 	background-image:url(images/RIGHT.png) !important;
@@ -55,7 +66,6 @@
 }
 
 .vista .left-bottom {
-	position: absolute;
 	width: 15px;
 	height: 15px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/LEFT_BOTTOM.png', sizingMethod='scale');
@@ -65,7 +75,6 @@
 }
 
 .vista .bottom {
-	position: absolute;
 	height: 16px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/BOTTOM.png', sizingMethod='scale');
 	background-image:url(images/BOTTOM.png) !important;
@@ -74,7 +83,6 @@
 }
 
 .vista .right-bottom {
-	position: absolute;
 	width: 16px;
 	height: 15px;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/RIGHT_BOTTOM.png', sizingMethod='scale');
@@ -84,7 +92,6 @@
 }
 
 .vista .close {
-	position: absolute;
 	width: 43px;
 	height: 18px;
 	right: 16px;
@@ -101,7 +108,6 @@
 }
 
 .vista .min {
-	position: absolute;
 	width: 26px;
 	height: 18px;
 	right: 83px;
@@ -118,7 +124,6 @@
 }
 
 .vista .max {
-	position: absolute;
 	width: 24px;
 	height: 18px;
 	right: 59px;
@@ -132,6 +137,28 @@
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/themes/vista/images/max_hover.png', sizingMethod='scale');
 	background-image:url(images/max_hover.png) !important;
 	background-image:none;
+}
+
+.vista .title {
+	padding:15px 15px 0px 15px;
+	font-size:12px;
+	height: 15px;
+	line-height: 15px;
+	overflow: hidden;
+	color:#000;
+}
+
+.vista .resize-x {
+	width: 10px;
+}
+
+.vista .resize-y {
+	height: 10px;
+}
+
+.vista .resize {
+	width: 10px;
+	height: 10px;
 }
 
 .ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block; }
