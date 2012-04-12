@@ -3,7 +3,8 @@
 {% load static %}
 
 {% block css %}
-	<link media="all" rel="stylesheet" href="{% static "css/admin.css" %}" type="text/css" />
+	<link media="all" rel="stylesheet" href="{% static "css/desktop.css" %}" type="text/css" />
+	<link media="all" rel="stylesheet" href="{% static "css/dock/dock1/dock.css" %}" type="text/css" />
 	<link media="all" rel="stylesheet" href="{% static "css/themes/vista/window.css" %}" type="text/css" />
 {% endblock %}
 
@@ -14,9 +15,10 @@
 	<script src="{% static "js/ui/jquery.ui.draggable.js" %}" type="text/javascript"></script>
 	<script src="{% static "js/ui/jquery.ui.resizable.js" %}" type="text/javascript"></script>
 	<script src="{% static "js/ui/jquery.ui.position.js" %}" type="text/javascript"></script>
-	<script src="{% static "js/ui/jquery.effects.core.js" %}" type="text/javascript"></script>
-	<script src="{% static "js/ui/jquery.effects.transfer.js" %}" type="text/javascript"></script>
-	<script src="{% static "js/jquery.window.js" %}" type="text/javascript"></script>
+	<script src="{% static "js/vuuvv/jquery.desktop.js" %}" type="text/javascript"></script>
+	<script src="{% static "js/vuuvv/jquery.window.js" %}" type="text/javascript"></script>
+	<script src="{% static "js/vuuvv/jquery.dock.js" %}" type="text/javascript"></script>
+	<script src="{% static "js/vuuvv/jquery.app.js" %}" type="text/javascript"></script>
 {% endblock %}
 
 {% block title %}
@@ -24,20 +26,29 @@ Dashboard
 {% endblock %} 
 
 {% block content %}
-<div id="test" style="width: 100px; height: 50px; background-color: #ccc; position: absolute; bottom: 50px; left: 50px"></div>
+<!--
+<div style="background: url(http://0.web.qstatic.com/webqqpic/style/images/appbutton_mouseover_bg3.png)">
+<img src="http://2.web.qstatic.com/webqqpic/pubapps/0/2/images/big.png" alt="" class="" />
+</div>
+--!>
 <script type="text/javascript">
+	$("body").desktop();
+	/*
 	var callback = function() {
 		$(".vuuvv-window").hide();
-		console.log("here1");
 	}
 	$("<h1>TEST</h1>").window({theme: "vista"});
 	$("#test").click(function() {
-			$(".vuuvv-window").animate({left: $("#test").css("left"), 
-				top: $("#test").css("top"),
-				height: $("#test").height(),
-				width: $("#test").width()
-			}, 300, "linear", callback);
+		var offset = $("#test").offset();
+		$(".vuuvv-window").animate({
+			opacity: "hide",
+			left: offset.left, 
+			top: offset.top,
+			height: $("#test").height(),
+			width: $("#test").width()
+		}, 300, "linear", callback);
 	});
+	*/
 </script>
 <style type="text/css">
 	body {

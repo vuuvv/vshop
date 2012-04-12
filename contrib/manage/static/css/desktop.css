@@ -1,0 +1,46 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.app_normal .app_container {
+	position: absolute;
+	width: 88px;
+	height: 88px;
+}
+
+.app_normal .ui-state-hover .app_container {
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/images/app_normal.png', sizingMethod='scale');
+	background-image:url(images/icon_normal.png) !important;
+	background-image:none;
+}
+
+.app_dock .app_container {
+	position: absolute;
+	width: 58px;
+	height: 58px;
+}
+
+.app_dock .ui-state-hover .app_container {
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/images/app_dock.png', sizingMethod='scale');
+	background-image:url(images/icon_dock.png) !important;
+	background-image:none;
+}
+
+.app_normal .app_icon {
+	margin: 12px auto;
+	width: 64px;
+	height: 64px;
+}
+
+.app_dock .app_icon {
+	margin: 5px auto;
+	width: 48px;
+	height: 48px;
+}

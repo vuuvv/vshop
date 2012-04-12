@@ -1,23 +1,4 @@
-(function($) {
-
-var css_choose = function($dom, style) {
-	var candicates = Array.prototype.slice.call(arguments, 2);
-	var origin = $dom.css(style);
-	if ($.inArray(origin, candicates) == -1) {
-		$dom.css(style, candicates[0]);
-	}
-}
-
-})(jQuery);
-
 (function($){
-
-var change_size = function($dom, origin_size, dx, dy) {
-	$dom.css({
-		width: origin_size.width + dx,
-		height: origin_size.height + dy
-	});
-}
 
 $.widget("vuuvv.window", {
 	options: {
@@ -86,6 +67,23 @@ $.widget("vuuvv.window", {
 		return $dom;
 	},
 
+	open: function() {
+		if (this._opened) {
+			return;
+		}
+
+		self.win.show();
+	},
+
+	min: function() {
+	},
+
+	restore: function() {
+	},
+
+	max: function() {
+	},
+
 	_make_resizable: function() {
 		var self = this;
 		self._resize_x = self._create_div("resize-x", {right: 5, top: self._right.css("top"), height: self._right.height()}).text(" ");
@@ -118,6 +116,7 @@ $.widget("vuuvv.window", {
 			options = self.options;
 
 		self.win.draggable({
+			scroll: false,
 			handle: ".title"
 		});
 	}

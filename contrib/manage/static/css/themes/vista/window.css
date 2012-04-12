@@ -161,13 +161,13 @@
 	height: 10px;
 }
 
-.ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block; }
-.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
-.ui-resizable-n { cursor: n-resize; }
-.ui-resizable-s { cursor: s-resize; }
-.ui-resizable-e { cursor: e-resize; }
-.ui-resizable-w { cursor: w-resize; }
-.ui-resizable-se { cursor: se-resize; }
-.ui-resizable-sw { cursor: sw-resize; }
-.ui-resizable-nw { cursor: nw-resize; }
-.ui-resizable-ne { cursor: ne-resize; }
+.vista .ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block; }
+.vista .ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.vista .ui-resizable-n { cursor: n-resize; }
+.vista .ui-resizable-s { cursor: s-resize; }
+.vista .ui-resizable-e { cursor: e-resize; }
+.vista .ui-resizable-w { cursor: w-resize; }
+.vista .ui-resizable-se { cursor: se-resize; }
+.vista .ui-resizable-sw { cursor: sw-resize; }
+.vista .ui-resizable-nw { cursor: nw-resize; }
+.vista .ui-resizable-ne { cursor: ne-resize; }
