@@ -4,14 +4,14 @@
 .dock_container_center{height:100%;
 	position: absolute;
 	overflow:hidden;
-	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='dzz/styles/dock/dock6/bg2.png', sizingMethod='scale');
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/dock/dock1/bg2.png', sizingMethod='scale');
 	background-image:url('bg2.png') !important;
 	background-image:none;
 	background-repeat: repeat-x;
 }
 .dock_container_left{height:100%;width:30px;
 	position: absolute;
-	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='dzz/styles/dock/dock6/bg1.png', sizingMethod='scale');
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/dock/dock1/bg1.png', sizingMethod='scale');
 	background-image:url('bg1.png') !important;
 	background-image:none;
 	background-repeat: no-repeat;
@@ -19,7 +19,7 @@
 }
 .dock_container_right{height:100%;width:30px;	
 	position: absolute;
-	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='dzz/styles/dock/dock6/bg3.png', sizingMethod='scale');
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/dock/dock1/bg3.png', sizingMethod='scale');
 	background-image:url('bg3.png') !important;
 	background-image:none;
 	background-repeat: no-repeat;
@@ -32,7 +32,7 @@
 
 
 #docksro {width:23px;z-index:1;height:50px;position:relative;
-	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='dzz/styles/dock/dock6/xian.png', sizingMethod='scale');
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/dock/dock1/xian.png', sizingMethod='scale');
 	background-image:url('xian.png') !important;
 	background-image:none;
 	background-repeat: no-repeat;

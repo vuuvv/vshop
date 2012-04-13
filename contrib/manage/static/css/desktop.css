@@ -7,40 +7,64 @@ body {
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
+	position: relative;
 }
 
-.app_normal .app_container {
+.app_normal {
 	position: absolute;
-	width: 88px;
+	width: 87px;
 	height: 88px;
+	cursor: pointer;
 }
 
-.app_normal .ui-state-hover .app_container {
-	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/images/app_normal.png', sizingMethod='scale');
-	background-image:url(images/icon_normal.png) !important;
-	background-image:none;
-}
-
-.app_dock .app_container {
+.app_dock {
 	position: absolute;
 	width: 58px;
 	height: 58px;
 }
 
+.app_normal .app_container {
+	height: 100%;
+}
+
+.app_normal .ui-state-hover .app_container {
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/images/app_normal.png', sizingMethod='scale');
+	background-image:url(images/app_normal.png) !important;
+	background-image:none;
+}
+
+.app_dock .app_container {
+	height: 100%;
+}
+
 .app_dock .ui-state-hover .app_container {
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/css/images/app_dock.png', sizingMethod='scale');
-	background-image:url(images/icon_dock.png) !important;
+	background-image:url(images/app_dock.png) !important;
 	background-image:none;
 }
 
 .app_normal .app_icon {
-	margin: 12px auto;
-	width: 64px;
-	height: 64px;
+	display: block;
+	position: absolute;
+	left: 19px;
+	top: 6px;
+	width: 48px;
+	height: 48px;
 }
 
 .app_dock .app_icon {
+	display: block;
+	position: absolute;
 	margin: 5px auto;
 	width: 48px;
 	height: 48px;
+}
+
+.app_normal .app_name {
+	position: absolute;
+	top: 62px;
+	color: white;
+	height: 20px;
+	width: 100%;
+	text-align: center;
 }
